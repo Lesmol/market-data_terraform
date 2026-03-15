@@ -30,20 +30,20 @@ resource "aws_iam_role_policy" "lambda_policy" {
   })
 }
 
-resource "aws_lambda_function" "market_data_function" {
-  function_name = "market-data-function"
-  package_type = "Image"
-  image_uri    = "${aws_ecr_repository.market_data.repository_url}:latest"
-  role          = aws_iam_role.lambda_exec.arn
-  memory_size = 512
-  timeout       = 300
+# resource "aws_lambda_function" "market_data_function" {
+#   function_name = "market-data-function"
+#   package_type = "Image"
+#   image_uri    = "${aws_ecr_repository.market_data.repository_url}:latest"
+#   role          = aws_iam_role.lambda_exec.arn
+#   memory_size = 512
+#   timeout       = 300
 
-  environment {
-    variables = {
-      POLYGON_API_KEY       = var.polygon_api_key
-      EMAIL_SERVICE_API_KEY = var.email_api_key
-      EMAIL_API_URL         = var.email_api_endpoint
-      CONFIG_TABLE          = aws_dynamodb_table.app_config.name
-    }
-  }
-}
+#   environment {
+#     variables = {
+#       POLYGON_API_KEY       = var.polygon_api_key
+#       EMAIL_SERVICE_API_KEY = var.email_api_key
+#       EMAIL_API_URL         = var.email_api_endpoint
+#       CONFIG_TABLE          = aws_dynamodb_table.app_config.name
+#     }
+#   }
+# }
