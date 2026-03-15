@@ -9,8 +9,8 @@ terraform {
   required_version = ">= 1.5"
 
   backend "s3" {
-    bucket         = "BUCKET_NAME"
-    key            = "KEY_NAME/terraform.tfstate"
+    bucket         = "v2-market-data-terraform-state"
+    key            = "market-data/terraform.tfstate"
     region         = "af-south-1"
     encrypt        = true
   }
