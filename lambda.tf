@@ -41,8 +41,8 @@ resource "aws_lambda_function" "market_data_function" {
   environment {
     variables = {
       POLYGON_API_KEY       = var.polygon_api_key
-      EMAIL_SERVICE_API_KEY = var.email_service_api_key
-      EMAIL_API_URL         = var.hosted_email_api_url
+      EMAIL_SERVICE_API_KEY = var.email_api_key
+      EMAIL_API_URL         = var.email_api_endpoint
       CONFIG_TABLE          = aws_dynamodb_table.app_config.name
     }
   }

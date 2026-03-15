@@ -11,11 +11,11 @@ variable "polygon_api_key" {
   sensitive = true
 }
 
-variable "email_service_api_key" {
+variable "email_api_key" {
   description = "Email service API key for sending notifications"
   sensitive = true
 }
 
-variable "hosted_email_api_url" {
+variable "email_api_endpoint" {
   description = "URL for the hosted email API"
 }
